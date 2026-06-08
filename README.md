@@ -20,4 +20,4 @@ During this 105-minute workshop, participants will:
 4. Run a guided case study analysing burnt forest areas.
 5. Explore additional EarthCODE data access examples, including SEASFIRE and Antarctica cubes.
 
-Participants should bring a laptop and use the existing `pangeo-notebook` conda environment. No package installation is part of the workshop.
+Participants should bring a laptop and use the existing `pangeo-notebook` conda environment. No package installation is part of the workshop
