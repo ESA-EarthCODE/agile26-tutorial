@@ -10,13 +10,3 @@ This short course is delivered by a group of contributors from the Pangeo and Ea
 - **Github**: [sunnydean](https://github.com/sunnydean)
 - **Project affiliation:** EarthCODE (https://earthcode.esa.int/) is a strategic initiative by the European Space Agency (ESA) designed to empower researchers in Earth System Science with FAIR and Open Science practices. By providing a collaborative development environment with integrated tools, cloud services, and expert guidance, EarthCODE helps scientists make their research more impactful, transparent, and reusable—while staying focused on the science itself.
 
----
-
-### **Anne Fouilloux**
-- **Affiliation:** [Simula Research Laboratory, Oslo, Norway](https://www.simula.no) / Pangeo Europe
-- **About:** Anne leads several Pangeo Europe activities, including Pangeo@EOSC and the Pangeo Training Infrastructure as a Service. Her work focuses on promoting scalable, FAIR, and open workflows for environmental science.
-- **Github**: [annefou](https://github.com/annefou)
-- **Project affiliation:**  EarthCODE (https://earthcode.esa.int/) is a strategic initiative by the European Space Agency (ESA) designed to empower researchers in Earth System Science with FAIR and Open Science practices. By providing a collaborative development environment with integrated tools, cloud services, and expert guidance, EarthCODE helps scientists make their research more impactful, transparent, and reusable—while staying focused on the science itself.
-
----
-

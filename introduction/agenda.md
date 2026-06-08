@@ -5,7 +5,7 @@
 1. **Welcome, Setup & Repo Clone** - 13:45 - 14:00
    Intro, repository clone, and local Conda setup.
 
-2. **EarthCODE 101** - 14:00 - 14:08
+2. **EarthCODE Summary** - 14:00 - 14:08
    What EarthCODE is and why it matters.
 
 3. **EarthCODE Open Science Catalog Walkthrough** - 14:08 - 14:23
