@@ -1,21 +1,21 @@
 # See docs at: https://mystmd.org/guide/frontmatter
 version: 1
 project:
-  title: Welcome
-  description: ESA EarthCODE 101
+  title: Hands-On with ESA EarthCODE
+  description: AGILE 2026 workshop on using open EO research data with EarthCODE and Pangeo
   authors:
     - name: European Space Agency
       affiliations:
         - id: ESA
           institution: ESA
           ror: https://ror.org/03wd9za21
-  github: https://github.com/ESA-EarthCODE/bids2025-tutorial
+  github: https://github.com/ESA-EarthCODE/agile26-tutorial
   thumbnail: static/PANGEO.png
   open_access: true
   license:
     content: CC-BY-4.0
     code: MIT
-  copyright: "2025"
+  copyright: "2026"
   toc:
     # Main navigation
     - file: index.md
@@ -26,7 +26,6 @@ project:
         - file: introduction/setup.md
     - file: earthcode101/earthcode101.md
       children:
-        - file: earthcode101/about_edc_pangeo.md
         - file: earthcode101/open_science_catalog.md
         - file: earthcode101/stac_and_data_access.ipynb
     - file: pangeo101/pangeo101.md
@@ -35,9 +34,10 @@ project:
         - file: pangeo101/cloud-native-formats-101.ipynb
         - file: pangeo101/dask101.ipynb
     - file: burnt-area-example/pangeo_on_EarthCODE.ipynb
-    - file: publishing-to-earthcode/publish.md
+    - file: data_access_examples/index.md
       children:
-        - file: publishing-to-earthcode/deep-code/deep-code/publish-pangeo.ipynb
+        - file: data_access_examples/seasfire/1. pangeo_on_EarthCODE_parallel.ipynb
+        - file: data_access_examples/antarctic-cubes/access_and_viz.ipynb
   subject: earth and related environmental sciences
   bibliography:
     - references.bib

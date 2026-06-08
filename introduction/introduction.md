@@ -1,31 +1,25 @@
 # Introduction
 
+# Welcome to Hands-On with ESA EarthCODE
 
-# Welcome to the ESA EarthCODE 101 Workshop!
+EarthCODE is a strategic initiative by the <b>European Space Agency (ESA)</b> designed to support FAIR and Open Science practice in Earth System Science.
 
-EarthCODE is a strategic initiative by the <b> European Space Agency (ESA) </b> designed to empower researchers in Earth System Science with FAIR and Open Science practices. By providing a collaborative development environment with integrated tools, cloud services, and expert guidance, EarthCODE helps scientists make their research more impactful, transparent, and reusable—while staying focused on the science itself.
+This AGILE 2026 workshop focuses on practical reuse of openly available ESA Earth Observation research data. You will learn how EarthCODE helps researchers discover, explore, access, and reuse data products and workflows through the Open Science Catalog and common open-source Python tools.
 
-<b>Doing Open Science shouldn't be hard, and EarthCODE makes it easy!</b>
+During the workshop, participants will:
 
-This hands-on workshop is designed to introduce participants to EarthCODE's and the EDC Pangeo Platform's capabilities, guiding them from searching, finding, and accessing EO datasets and workflows to publishing reproducible experiments that can be shared with the wider scientific community.
+- Understand what EarthCODE is and why it matters for open EO research.
+- Browse the EarthCODE Open Science Catalog and identify reusable datasets and workflows.
+- Refresh STAC, data access, Xarray, Zarr, Dask, and Pangeo concepts.
+- Work through a guided analysis of burnt forest areas.
+- Explore additional data access examples, including SEASFIRE and Antarctica analysis-ready data cubes.
 
-This workshop will equip you with the tools and knowledge to leverage EarthCODE for your own projects and contribute to the future of open science. During this workshop, participants will, in a hands-on fashion will learn about the following:
-- Introduction to EarthCODE and the future of FAIR and Open Science in Earth Observation
-- Gain understanding in Finding, Accessing, Interoperability, and Reusability of data and workflows on EarthCODE
-- Creating reproducible experiments using EarthCODE’s platforms - with a hands-on example with Euro Data Cube and Pangeo
-- Publishing data and experiments to EarthCODE At the end of the workshop, we will take time for discussion and feedback on how to make EarthCODE better for the community.
-
-
-**Pre-requirements for attendees**: The participants need to bring their laptop and have an active github account but do not need to install anything as the resources will be accessed online using Pangeo notebooks provided by EarthCODE and EDC.
+**Pre-requirements for attendees**: Bring a laptop and use the existing `pangeo-notebook` conda environment. The workshop assumes basic familiarity with Python and Jupyter notebooks. No package installation is part of the session.
 
 :::{hint} Learning Objectives
-- Get familiar with the EDC Pangeo Cloud Platform and Dask.
-- Access EarthCODE Open Science Catalog using the STAC API.
-- Understand and work with Zarr-formatted data and chunking.
-- Use Xarray and Dask for scalable geospatial analysis.
-- Run a complete data analysis example using EarthCODE resources.
-- Save and publish results to the EarthCODE Catalog.
+- Find relevant EarthCODE resources through the Open Science Catalog.
+- Access catalog data programmatically using STAC and Python tools.
+- Load Zarr-backed EO datasets with Xarray.
+- Understand how Dask supports lazy and scalable computation.
+- Apply the workflow in a guided burnt forest area analysis.
 :::
-
-
-

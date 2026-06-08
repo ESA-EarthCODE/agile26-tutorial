@@ -1,23 +1,23 @@
 ---
-title: ESA EarthCODE 101
-subtitle: Pangeo meets EarthCODE
-description: This training introduces participants to the EDC Pangeo Cloud Platform and scalable geospatial analysis using Python tools. Participants will learn how to access data programmatically from the EarthCODE Open Science Catalog via the STAC API, explore Zarr-formatted datasets, and use Xarray with Dask for efficient data processing. The session includes a hands-on example and guidance on saving and publishing results back to the EarthCODE Catalog.
-keywords: [FAIR, pangeo, earthCODE]
-tags: [FAIR, pangeo, earthCODE]
+title: Hands-On with ESA EarthCODE
+subtitle: Using Open EO Research Data
+description: AGILE 2026 hands-on workshop introducing EarthCODE, the Open Science Catalog, STAC-based data access, Pangeo tools, and a guided burnt forest area analysis using open ESA EO research data.
+keywords: [FAIR, pangeo, earthCODE, STAC, open science]
+tags: [FAIR, pangeo, earthCODE, STAC, open science]
 # site:
 #   hide_title_block: true
 #   hide_outline: true
 #   hide_toc: true
 ---
 
-# Welcome to the ESA EarthCODE 101 Workshop!
+# Hands-On with ESA EarthCODE
 
-EarthCODE is a strategic initiative by the <b> European Space Agency (ESA) </b> designed to empower researchers in Earth System Science with FAIR and Open Science practices.
+This AGILE 2026 workshop introduces EarthCODE through practical, hands-on reuse of open Earth Observation research data.
 
-<b>Doing Open Science shouldn't be hard, and EarthCODE makes it easy!</b>
-
+EarthCODE is a strategic initiative by the <b>European Space Agency (ESA)</b> designed to support FAIR and Open Science practice in Earth System Science.
 
 ![EarthCODE Logo](./static/PangeoXEarthCODE.png)
 
-This hands-on workshop is designed to introduce participants to EarthCODE's and the EDC Pangeo Platform's capabilities.
+Participants will browse the EarthCODE Open Science Catalog, access datasets through STAC and Python tools, refresh core Pangeo concepts, and work through a guided case study analysing burnt forest areas.
 
+The workshop uses a local Jupyter environment with the existing `pangeo-notebook` conda environment.
