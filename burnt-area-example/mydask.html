@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dask task graph</title>
+</head>
+<body>
+
+
+<!-- Load require.js. Delete this if your page already loads require.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+<script type="application/vnd.jupyter.widget-state+json">
+{
+  "version_major": 2,
+  "version_minor": 0,
+  "state": {
+    "9654d846c8564643a636e16946d7fb71": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {
+        "width": "150px"
+      }
+    },
+    "c0b00f6b8a4d4602aae56a8a2a39146e": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "2c53b24378e24390b111dc1dd6386a37": {
+      "model_name": "HTMLStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "be8c757b79054a9db97860dd2aa221ab": {
+      "model_name": "HTMLModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_c0b00f6b8a4d4602aae56a8a2a39146e",
+        "style": "IPY_MODEL_2c53b24378e24390b111dc1dd6386a37",
+        "value": "<div class=\"jp-RenderedHTMLCommon jp-RenderedHTML jp-mod-trusted jp-OutputArea-output\">\n    <div style=\"width: 24px; height: 24px; background-color: #e1e1e1; border: 3px solid #9D9D9D; border-radius: 5px; position: absolute;\">\n    </div>\n    <div style=\"margin-left: 48px;\">\n        <h3 style=\"margin-bottom: 0px; margin-top: 0px;\">LocalCluster</h3>\n        <p style=\"color: #9D9D9D; margin-bottom: 0px;\">611e4061</p>\n        <table style=\"width: 100%; text-align: left;\">\n            <tr>\n                <td style=\"text-align: left;\">\n                    <strong>Dashboard:</strong> <a href=\"http://127.0.0.1:8787/status\" target=\"_blank\">http://127.0.0.1:8787/status</a>\n                </td>\n                <td style=\"text-align: left;\">\n                    <strong>Workers:</strong> 5\n                </td>\n            </tr>\n            <tr>\n                <td style=\"text-align: left;\">\n                    <strong>Total threads:</strong> 10\n                </td>\n                <td style=\"text-align: left;\">\n                    <strong>Total memory:</strong> 24.00 GiB\n                </td>\n            </tr>\n            \n            <tr>\n    <td style=\"text-align: left;\"><strong>Status:</strong> running</td>\n    <td style=\"text-align: left;\"><strong>Using processes:</strong> True</td>\n</tr>\n\n            \n        </table>\n\n        <details>\n            <summary style=\"margin-bottom: 20px;\">\n                <h3 style=\"display: inline;\">Scheduler Info</h3>\n            </summary>\n\n            <div style=\"\">\n    <div>\n        <div style=\"width: 24px; height: 24px; background-color: #FFF7E5; border: 3px solid #FF6132; border-radius: 5px; position: absolute;\"> </div>\n        <div style=\"margin-left: 48px;\">\n            <h3 style=\"margin-bottom: 0px;\">Scheduler</h3>\n            <p style=\"color: #9D9D9D; margin-bottom: 0px;\">Scheduler-348eb1f4-107f-415b-94b4-9ebe32733c21</p>\n            <table style=\"width: 100%; text-align: left;\">\n                <tr>\n                    <td style=\"text-align: left;\">\n                        <strong>Comm:</strong> tcp://127.0.0.1:50486\n                    </td>\n                    <td style=\"text-align: left;\">\n                        <strong>Workers:</strong> 5\n                    </td>\n                </tr>\n                <tr>\n                    <td style=\"text-align: left;\">\n                        <strong>Dashboard:</strong> <a href=\"http://127.0.0.1:8787/status\" target=\"_blank\">http://127.0.0.1:8787/status</a>\n                    </td>\n                    <td style=\"text-align: left;\">\n                        <strong>Total threads:</strong> 10\n                    </td>\n                </tr>\n                <tr>\n                    <td style=\"text-align: left;\">\n                        <strong>Started:</strong> Just now\n                    </td>\n                    <td style=\"text-align: left;\">\n                        <strong>Total memory:</strong> 24.00 GiB\n                    </td>\n                </tr>\n            </table>\n        </div>\n    </div>\n\n    <details style=\"margin-left: 48px;\">\n        <summary style=\"margin-bottom: 20px;\">\n            <h3 style=\"display: inline;\">Workers</h3>\n        </summary>\n\n        \n        <div style=\"margin-bottom: 20px;\">\n            <div style=\"width: 24px; height: 24px; background-color: #DBF5FF; border: 3px solid #4CC9FF; border-radius: 5px; position: absolute;\"> </div>\n            <div style=\"margin-left: 48px;\">\n            <details>\n                <summary>\n                    <h4 style=\"margin-bottom: 0px; display: inline;\">Worker: 0</h4>\n                </summary>\n                <table style=\"width: 100%; text-align: left;\">\n                    <tr>\n                        <td style=\"text-align: left;\">\n                            <strong>Comm: </strong> tcp://127.0.0.1:50499\n                        </td>\n                        <td style=\"text-align: left;\">\n                            <strong>Total threads: </strong> 2\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"text-align: left;\">\n                            <strong>Dashboard: </strong> <a href=\"http://127.0.0.1:50502/status\" target=\"_blank\">http://127.0.0.1:50502/status</a>\n                        </td>\n                        <td style=\"text-align: left;\">\n                            <strong>Memory: </strong> 4.80 GiB\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"text-align: left;\">\n                            <strong>Nanny: </strong> tcp://127.0.0.1:50489\n                        </td>\n                        <td style=\"text-align: left;\"></td>\n                    </tr>\n                    <tr>\n                        <td colspan=\"2\" style=\"text-align: left;\">\n                            <strong>Local directory: </strong> /var/folders/k6/1r9h76z14xx_l3r9n7cdxc140000gn/T/dask-scratch-space/worker-ck54azfd\n                        </td>\n                    </tr>\n\n                    \n\n                    \n\n                </table>\n            </details>\n            </div>\n        </div>\n        \n        <div style=\"margin-bottom: 20px;\">\n            <div style=\"width: 24px; height: 24px; background-color: #DBF5FF; border: 3px solid #4CC9FF; border-radius: 5px; position: absolute;\"> </div>\n            <div style=\"margin-left: 48px;\">\n            <details>\n                <summary>\n                    <h4 style=\"margin-bottom: 0px; display: inline;\">Worker: 1</h4>\n                </summary>\n                <table style=\"width: 100%; text-align: left;\">\n                    <tr>\n                        <td style=\"text-align: left;\">\n                            <strong>Comm: </strong> tcp://127.0.0.1:50501\n                        </td>\n                        <td style=\"text-align: left;\">\n                            <strong>Total threads: </strong> 2\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"text-align: left;\">\n                            <strong>Dashboard: </strong> <a href=\"http://127.0.0.1:50504/status\" target=\"_blank\">http://127.0.0.1:50504/status</a>\n                        </td>\n                        <td style=\"text-align: left;\">\n                            <strong>Memory: </strong> 4.80 GiB\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"text-align: left;\">\n                            <strong>Nanny: </strong> tcp://127.0.0.1:50491\n                        </td>\n                        <td style=\"text-align: left;\"></td>\n                    </tr>\n                    <tr>\n                        <td colspan=\"2\" style=\"text-align: left;\">\n                            <strong>Local directory: </strong> /var/folders/k6/1r9h76z14xx_l3r9n7cdxc140000gn/T/dask-scratch-space/worker-wp0l1rle\n                        </td>\n                    </tr>\n\n                    \n\n                    \n\n                </table>\n            </details>\n            </div>\n        </div>\n        \n        <div style=\"margin-bottom: 20px;\">\n            <div style=\"width: 24px; height: 24px; background-color: #DBF5FF; border: 3px solid #4CC9FF; border-radius: 5px; position: absolute;\"> </div>\n            <div style=\"margin-left: 48px;\">\n            <details>\n                <summary>\n                    <h4 style=\"margin-bottom: 0px; display: inline;\">Worker: 2</h4>\n                </summary>\n                <table style=\"width: 100%; text-align: left;\">\n                    <tr>\n                        <td style=\"text-align: left;\">\n                            <strong>Comm: </strong> tcp://127.0.0.1:50500\n                        </td>\n                        <td style=\"text-align: left;\">\n                            <strong>Total threads: </strong> 2\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"text-align: left;\">\n                            <strong>Dashboard: </strong> <a href=\"http://127.0.0.1:50506/status\" target=\"_blank\">http://127.0.0.1:50506/status</a>\n                        </td>\n                        <td style=\"text-align: left;\">\n                            <strong>Memory: </strong> 4.80 GiB\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"text-align: left;\">\n                            <strong>Nanny: </strong> tcp://127.0.0.1:50493\n                        </td>\n                        <td style=\"text-align: left;\"></td>\n                    </tr>\n                    <tr>\n                        <td colspan=\"2\" style=\"text-align: left;\">\n                            <strong>Local directory: </strong> /var/folders/k6/1r9h76z14xx_l3r9n7cdxc140000gn/T/dask-scratch-space/worker-brfav4rl\n                        </td>\n                    </tr>\n\n                    \n\n                    \n\n                </table>\n            </details>\n            </div>\n        </div>\n        \n        <div style=\"margin-bottom: 20px;\">\n            <div style=\"width: 24px; height: 24px; background-color: #DBF5FF; border: 3px solid #4CC9FF; border-radius: 5px; position: absolute;\"> </div>\n            <div style=\"margin-left: 48px;\">\n            <details>\n                <summary>\n                    <h4 style=\"margin-bottom: 0px; display: inline;\">Worker: 3</h4>\n                </summary>\n                <table style=\"width: 100%; text-align: left;\">\n                    <tr>\n                        <td style=\"text-align: left;\">\n                            <strong>Comm: </strong> tcp://127.0.0.1:50511\n                        </td>\n                        <td style=\"text-align: left;\">\n                            <strong>Total threads: </strong> 2\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"text-align: left;\">\n                            <strong>Dashboard: </strong> <a href=\"http://127.0.0.1:50512/status\" target=\"_blank\">http://127.0.0.1:50512/status</a>\n                        </td>\n                        <td style=\"text-align: left;\">\n                            <strong>Memory: </strong> 4.80 GiB\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"text-align: left;\">\n                            <strong>Nanny: </strong> tcp://127.0.0.1:50495\n                        </td>\n                        <td style=\"text-align: left;\"></td>\n                    </tr>\n                    <tr>\n                        <td colspan=\"2\" style=\"text-align: left;\">\n                            <strong>Local directory: </strong> /var/folders/k6/1r9h76z14xx_l3r9n7cdxc140000gn/T/dask-scratch-space/worker-8dw3as7o\n                        </td>\n                    </tr>\n\n                    \n\n                    \n\n                </table>\n            </details>\n            </div>\n        </div>\n        \n        <div style=\"margin-bottom: 20px;\">\n            <div style=\"width: 24px; height: 24px; background-color: #DBF5FF; border: 3px solid #4CC9FF; border-radius: 5px; position: absolute;\"> </div>\n            <div style=\"margin-left: 48px;\">\n            <details>\n                <summary>\n                    <h4 style=\"margin-bottom: 0px; display: inline;\">Worker: 4</h4>\n                </summary>\n                <table style=\"width: 100%; text-align: left;\">\n                    <tr>\n                        <td style=\"text-align: left;\">\n                            <strong>Comm: </strong> tcp://127.0.0.1:50508\n                        </td>\n                        <td style=\"text-align: left;\">\n                            <strong>Total threads: </strong> 2\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"text-align: left;\">\n                            <strong>Dashboard: </strong> <a href=\"http://127.0.0.1:50509/status\" target=\"_blank\">http://127.0.0.1:50509/status</a>\n                        </td>\n                        <td style=\"text-align: left;\">\n                            <strong>Memory: </strong> 4.80 GiB\n                        </td>\n                    </tr>\n                    <tr>\n                        <td style=\"text-align: left;\">\n                            <strong>Nanny: </strong> tcp://127.0.0.1:50497\n                        </td>\n                        <td style=\"text-align: left;\"></td>\n                    </tr>\n                    <tr>\n                        <td colspan=\"2\" style=\"text-align: left;\">\n                            <strong>Local directory: </strong> /var/folders/k6/1r9h76z14xx_l3r9n7cdxc140000gn/T/dask-scratch-space/worker-_vbbejjo\n                        </td>\n                    </tr>\n\n                    \n\n                    \n\n                </table>\n            </details>\n            </div>\n        </div>\n        \n\n    </details>\n</div>\n\n        </details>\n    </div>\n</div>"
+      }
+    },
+    "16182d2c7ff94966ad76e23570b060f0": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "24bd2b0de68743f48a814df4cd41ee92": {
+      "model_name": "IntTextModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "description": "Workers",
+        "layout": "IPY_MODEL_9654d846c8564643a636e16946d7fb71",
+        "style": "IPY_MODEL_16182d2c7ff94966ad76e23570b060f0"
+      }
+    },
+    "38b010464a6843ac87ee2d7062e3b079": {
+      "model_name": "ButtonStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "ea5a6d1d321c4e139f677bceaa03f4e8": {
+      "model_name": "ButtonModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "description": "Scale",
+        "layout": "IPY_MODEL_9654d846c8564643a636e16946d7fb71",
+        "style": "IPY_MODEL_38b010464a6843ac87ee2d7062e3b079"
+      }
+    },
+    "d5ea8f4061ff4e4bba39084d34f6cae6": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "8a99227c5fb94d809cf787fc46a674e7": {
+      "model_name": "IntTextModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "description": "Minimum",
+        "layout": "IPY_MODEL_9654d846c8564643a636e16946d7fb71",
+        "style": "IPY_MODEL_d5ea8f4061ff4e4bba39084d34f6cae6"
+      }
+    },
+    "585437fbac39407ea74d59483807456f": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "e2f5d79fb04f4ed0820dfd2b6d936d16": {
+      "model_name": "IntTextModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "description": "Maximum",
+        "layout": "IPY_MODEL_9654d846c8564643a636e16946d7fb71",
+        "style": "IPY_MODEL_585437fbac39407ea74d59483807456f"
+      }
+    },
+    "cc372977a9b04011a322560c4e396690": {
+      "model_name": "ButtonStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "7d801273cae24b5fbada9dc2fbe55e6d": {
+      "model_name": "ButtonModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "description": "Adapt",
+        "layout": "IPY_MODEL_9654d846c8564643a636e16946d7fb71",
+        "style": "IPY_MODEL_cc372977a9b04011a322560c4e396690"
+      }
+    },
+    "1a83b3c933544c50a53696bbca9c0b81": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "3aacb2ce2e4f49a08e6688530c2c6da4": {
+      "model_name": "HBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "children": [
+          "IPY_MODEL_24bd2b0de68743f48a814df4cd41ee92",
+          "IPY_MODEL_ea5a6d1d321c4e139f677bceaa03f4e8"
+        ],
+        "layout": "IPY_MODEL_1a83b3c933544c50a53696bbca9c0b81"
+      }
+    },
+    "93070625f9c74349a81db5ee9b806146": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "779d9ff37e454e43a3d63230d0bb7d1f": {
+      "model_name": "HBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "children": [
+          "IPY_MODEL_8a99227c5fb94d809cf787fc46a674e7",
+          "IPY_MODEL_e2f5d79fb04f4ed0820dfd2b6d936d16",
+          "IPY_MODEL_7d801273cae24b5fbada9dc2fbe55e6d"
+        ],
+        "layout": "IPY_MODEL_93070625f9c74349a81db5ee9b806146"
+      }
+    },
+    "0c76483b96bb4ee5a1857aed6eec16ca": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {
+        "min_width": "500px"
+      }
+    },
+    "1758de94998842e6b6cae04c0e8bc44d": {
+      "model_name": "AccordionModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "children": [
+          "IPY_MODEL_3aacb2ce2e4f49a08e6688530c2c6da4",
+          "IPY_MODEL_779d9ff37e454e43a3d63230d0bb7d1f"
+        ],
+        "layout": "IPY_MODEL_0c76483b96bb4ee5a1857aed6eec16ca",
+        "titles": [
+          "Manual Scaling",
+          "Adaptive Scaling"
+        ]
+      }
+    },
+    "0a9461efae424294a852c91189c8c8db": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "3a0f5f9d1cd74e4a9d31c070b2890f46": {
+      "model_name": "HTMLStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "3f1d0558ebce4650b361510230c4b1f9": {
+      "model_name": "HTMLModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_0a9461efae424294a852c91189c8c8db",
+        "style": "IPY_MODEL_3a0f5f9d1cd74e4a9d31c070b2890f46",
+        "value": "\n        <table>\n            <tr><td style=\"text-align: left;\">Scaling mode: Manual</td></tr>\n            <tr><td style=\"text-align: left;\">Workers: 5</td></tr>\n        </table>\n        "
+      }
+    },
+    "973cfa54c57d421da61eafb7e285d0f7": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "bf65509ccea04834a5e966f4de0c2834": {
+      "model_name": "TabModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "children": [
+          "IPY_MODEL_be8c757b79054a9db97860dd2aa221ab",
+          "IPY_MODEL_0c3102415eef40a6a49f02cf2c6d0fb9"
+        ],
+        "layout": "IPY_MODEL_973cfa54c57d421da61eafb7e285d0f7",
+        "selected_index": 1,
+        "titles": [
+          "Status",
+          "Scaling"
+        ]
+      }
+    },
+    "05006a9178654f0cb1771f7ab8d6ce8a": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {}
+    },
+    "0c3102415eef40a6a49f02cf2c6d0fb9": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "2.0.0",
+      "state": {
+        "_dom_classes": [],
+        "children": [
+          "IPY_MODEL_3f1d0558ebce4650b361510230c4b1f9",
+          "IPY_MODEL_1758de94998842e6b6cae04c0e8bc44d"
+        ],
+        "layout": "IPY_MODEL_05006a9178654f0cb1771f7ab8d6ce8a"
+      }
+    },
+    "4825f54d6b394158b1b4d17dc5b0a3d7": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "2.0.0",
+      "state": {
+        "height": "400px"
+      }
+    },
+    "c0b4840b021d4e2c851cf9c9dc88bd94": {
+      "model_name": "GraphModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "_adj": {},
+        "edges": [],
+        "nodes": []
+      }
+    },
+    "03f4c2d5e55c447d822f5772dbcb2fd2": {
+      "model_name": "CytoscapeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "_dom_classes": [],
+        "cytoscape_layout": {
+          "name": "dagre",
+          "rankDir": "BT",
+          "nodeSep": 10,
+          "edgeSep": 10,
+          "spacingFactor": 1,
+          "nodeDimensionsIncludeLabels": true
+        },
+        "cytoscape_style": [
+          {
+            "selector": "node",
+            "style": {
+              "font-family": "helvetica",
+              "font-size": "24px",
+              "font-weight": "bold",
+              "color": "black",
+              "background-color": "#eee",
+              "border-color": "data(color)",
+              "border-width": 4,
+              "opacity": "1.0",
+              "text-valign": "center",
+              "text-halign": "center",
+              "label": "data(label)",
+              "shape": "data(shape)",
+              "width": 64,
+              "height": 64
+            }
+          },
+          {
+            "selector": "edge",
+            "style": {
+              "width": 8,
+              "line-color": "gray",
+              "target-arrow-shape": "triangle",
+              "target-arrow-color": "gray",
+              "curve-style": "bezier"
+            }
+          }
+        ],
+        "graph": "IPY_MODEL_0717a5ef014b404e801aecb19f8a9ae2",
+        "layout": "IPY_MODEL_4825f54d6b394158b1b4d17dc5b0a3d7",
+        "max_zoom": 4.0,
+        "min_zoom": 0.2,
+        "rendered_position": {
+          "renderedPosition": {
+            "x": 100,
+            "y": 100
+          }
+        },
+        "wheel_sensitivity": 0.1
+      }
+    },
+    "0717a5ef014b404e801aecb19f8a9ae2": {
+      "model_name": "GraphModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "_adj": {
+          "-5704136578837237004": {
+            "2944466879301784814": 1
+          },
+          "-6345034741783916790": {
+            "-5704136578837237004": 1
+          },
+          "1412202685105659092": {
+            "-5704136578837237004": 1,
+            "122211648408059670": 1
+          },
+          "2944466879301784814": {},
+          "3909881029077535737": {
+            "3829868187789576621": 1
+          },
+          "9058431389960596993": {
+            "3909881029077535737": 1,
+            "-4011370473613905936": 1
+          },
+          "-3169915368112340790": {
+            "3909881029077535737": 1
+          },
+          "3829868187789576621": {
+            "691385829263976336": 1
+          },
+          "691385829263976336": {
+            "-6345034741783916790": 1
+          },
+          "-4011370473613905936": {
+            "-3169915368112340790": 1
+          },
+          "6920431793828237675": {
+            "-4011370473613905936": 1
+          },
+          "6000439778855195061": {
+            "-4011370473613905936": 1
+          },
+          "122211648408059670": {
+            "-7443907045954447704": 1
+          },
+          "-1908479610123890986": {
+            "122211648408059670": 1,
+            "-7396229968930044687": 1
+          },
+          "-7443907045954447704": {
+            "-674784242429165144": 1
+          },
+          "-674784242429165144": {
+            "9058431389960596993": 1
+          },
+          "-2354299233626930436": {
+            "-1908479610123890986": 1
+          },
+          "-983182586318052413": {
+            "-2354299233626930436": 1
+          },
+          "-7396229968930044687": {
+            "976988216998548035": 1
+          },
+          "976988216998548035": {
+            "6793519371572144895": 1
+          },
+          "6793519371572144895": {
+            "1412202685105659092": 1
+          },
+          "-2400464418301456311": {
+            "4506726817145060184": 1
+          },
+          "4506726817145060184": {
+            "-6425526071716448624": 1
+          },
+          "-6425526071716448624": {
+            "-983182586318052413": 1
+          }
+        },
+        "edges": [
+          "IPY_MODEL_0bc82b38d8234aafb8f96b98813482b4",
+          "IPY_MODEL_d49e366e3abe49b4b5143f3bf6d82cb3",
+          "IPY_MODEL_bafc5eef40c04c568bbe61b0a4d14adf",
+          "IPY_MODEL_a83ef5e94786482aa6223756a11f2719",
+          "IPY_MODEL_9f27cce0e14841faa155a8e7338b9387",
+          "IPY_MODEL_dac1c5b02bfa4948b19d4391ad8fa36c",
+          "IPY_MODEL_c54db4ff48c941edb030e74a2c1f35f3",
+          "IPY_MODEL_e123c15a0ce74387b997ad70209feb2b",
+          "IPY_MODEL_82050364c8214c2196b3aeae55e249cb",
+          "IPY_MODEL_64581a88135442f49795ad7d443c3ff0",
+          "IPY_MODEL_2df5d443d7e94bb181fcd35127f13997",
+          "IPY_MODEL_3789961d660244d8842ca704a7c1ad6f",
+          "IPY_MODEL_9ec4c59f7ded4af691dbb355f4f9cb0e",
+          "IPY_MODEL_1cd57e4b023f418fb80476fa9a7a8450",
+          "IPY_MODEL_00af5ad811554844b4e61f2d547f3f02",
+          "IPY_MODEL_0a573504eeb94a5dad0d88e869ba98a9",
+          "IPY_MODEL_2c1ac43443664fc0b7531eeadc2ac73f",
+          "IPY_MODEL_08d6a9fecff14a388bbd1694db0efd20",
+          "IPY_MODEL_ea7075a75e7b48a9b262d4dfca0b32f2",
+          "IPY_MODEL_893731c14b7949d79b122e4e7137f67f",
+          "IPY_MODEL_5ca114ad2fc34da39ebf9facc21d24c1",
+          "IPY_MODEL_f068329ba1c74b569700bdef74bc531d",
+          "IPY_MODEL_5881eee4b87449db907a72688e622163",
+          "IPY_MODEL_a2c6929b45904f7a8047979f00adc757",
+          "IPY_MODEL_1376c1aa21da469d93986dc2af062663",
+          "IPY_MODEL_4957865d234541d78fd8dec17d14e98e"
+        ],
+        "nodes": [
+          "IPY_MODEL_98a9dbd91f8c4a77ac457c1dfecad4a6",
+          "IPY_MODEL_64bb3525e2074cb4a7c5d162576b2efd",
+          "IPY_MODEL_a066e373de7542deb2926b28006ab412",
+          "IPY_MODEL_fb070741967a42a59d616b90b3599340",
+          "IPY_MODEL_9d89a9f43f97449fa84eb8d799132953",
+          "IPY_MODEL_6c30d56570fa468c8777884b930d81ed",
+          "IPY_MODEL_70115fa2b0544c15989e1c9af5b8e174",
+          "IPY_MODEL_131a533c78394c02b8c4a632ebfd8fd9",
+          "IPY_MODEL_03d31bf1e38d41878fe8deb96b8e4e27",
+          "IPY_MODEL_ccf2be72b6b94962b58dc111b7acd038",
+          "IPY_MODEL_e4f0d4ed66144f0590244f9a487820af",
+          "IPY_MODEL_35f80a6636c141b58b75a36f52180fd9",
+          "IPY_MODEL_e186ff6e626a4ee39fefb789333da6ce",
+          "IPY_MODEL_d9b403b4a781407480db2e54b59c9c83",
+          "IPY_MODEL_7e7430c826a7486f851d4f5f241ab53c",
+          "IPY_MODEL_e48180f3f3da4b54b27f0264a9764ba0",
+          "IPY_MODEL_abd79fd4c6624ad2bf88b9e1f5db6caf",
+          "IPY_MODEL_5a9588ed3006434286aeb0ea43b47edb",
+          "IPY_MODEL_6b77e2fb1d86466caebdfffa286df087",
+          "IPY_MODEL_58182ec5991a4eae8d09dc37a7deae1c",
+          "IPY_MODEL_386d9aba021d4f89a9bb7b4709c8eeed",
+          "IPY_MODEL_ff54bb4426204361a9e0d4946b7897a8",
+          "IPY_MODEL_36a68a4f1bff40a0bf5f40daed306456",
+          "IPY_MODEL_0482bd662a0a459b84058f4f98bbd318"
+        ]
+      }
+    },
+    "98a9dbd91f8c4a77ac457c1dfecad4a6": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "data": {
+          "id": "-5704136578837237004",
+          "label": "where",
+          "shape": "ellipse",
+          "color": "gray"
+        },
+        "position": {}
+      }
+    },
+    "64bb3525e2074cb4a7c5d162576b2efd": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "data": {
+          "id": "-6345034741783916790",
+          "label": "()",
+          "shape": "rectangle",
+          "color": "gray"
+        },
+        "position": {}
+      }
+    },
+    "a066e373de7542deb2926b28006ab412": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "data": {
+          "id": "1412202685105659092",
+          "label": "()",
+          "shape": "rectangle",
+          "color": "gray"
+        },
+        "position": {}
+      }
+    },
+    "fb070741967a42a59d616b90b3599340": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "data": {
+          "id": "2944466879301784814",
+          "label": "()",
+          "shape": "rectangle",
+          "color": "gray"
+        },
+        "position": {}
+      }
+    },
+    "9d89a9f43f97449fa84eb8d799132953": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "data": {
+          "id": "3909881029077535737",
+          "label": "slice_with_int_dask_array_aggregate-getitem",
+          "shape": "ellipse",
+          "color": "gray"
+        },
+        "position": {}
+      }
+    },
+    "6c30d56570fa468c8777884b930d81ed": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "data": {
+          "id": "9058431389960596993",
+          "label": "0",
+          "shape": "rectangle",
+          "color": "gray"
+        },
+        "position": {}
+      }
+    },
+    "70115fa2b0544c15989e1c9af5b8e174": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "data": {
+          "id": "-3169915368112340790",
+          "label": "(0, 0)",
+          "shape": "rectangle",
+          "color": "gray"
+        },
+        "position": {}
+      }
+    },
+    "131a533c78394c02b8c4a632ebfd8fd9": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "data": {
+          "id": "3829868187789576621",
+          "label": "()",
+          "shape": "rectangle",
+          "color": "gray"
+        },
+        "position": {}
+      }
+    },
+    "03d31bf1e38d41878fe8deb96b8e4e27": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "data": {
+          "id": "691385829263976336",
+          "label": "getitem",
+          "shape": "ellipse",
+          "color": "gray"
+        },
+        "position": {}
+      }
+    },
+    "ccf2be72b6b94962b58dc111b7acd038": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "data": {
+          "id": "-4011370473613905936",
+          "label": "slice_with_int_dask_array",
+          "shape": "ellipse",
+          "color": "gray"
+        },
+        "position": {}
+      }
+    },
+    "e4f0d4ed66144f0590244f9a487820af": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "data": {
+          "id": "6920431793828237675",
+          "label": "0",
+          "shape": "rectangle",
+          "color": "gray"
+        },
+        "position": {}
+      }
+    },
+    "35f80a6636c141b58b75a36f52180fd9": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "data": {
+          "id": "6000439778855195061",
+          "label": "0",
+          "shape": "rectangle",
+          "color": "gray"
+        },
+        "position": {}
+      }
+    },
+    "e186ff6e626a4ee39fefb789333da6ce": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "data": {
+          "id": "122211648408059670",
+          "label": "arg-reduce",
+          "shape": "ellipse",
+          "color": "gray"
+        },
+        "position": {}
+      }
+    },
+    "d9b403b4a781407480db2e54b59c9c83": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "data": {
+          "id": "-1908479610123890986",
+          "label": "0",
+          "shape": "rectangle",
+          "color": "gray"
+        },
+        "position": {}
+      }
+    },
+    "7e7430c826a7486f851d4f5f241ab53c": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "data": {
+          "id": "-7443907045954447704",
+          "label": "0",
+          "shape": "rectangle",
+          "color": "gray"
+        },
+        "position": {}
+      }
+    },
+    "e48180f3f3da4b54b27f0264a9764ba0": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "data": {
+          "id": "-674784242429165144",
+          "label": "getitem",
+          "shape": "ellipse",
+          "color": "gray"
+        },
+        "position": {}
+      }
+    },
+    "abd79fd4c6624ad2bf88b9e1f5db6caf": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "data": {
+          "id": "-2354299233626930436",
+          "label": "sum-aggregate",
+          "shape": "ellipse",
+          "color": "gray"
+        },
+        "position": {}
+      }
+    },
+    "5a9588ed3006434286aeb0ea43b47edb": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "data": {
+          "id": "-983182586318052413",
+          "label": "(0, 0, 0)",
+          "shape": "rectangle",
+          "color": "gray"
+        },
+        "position": {}
+      }
+    },
+    "6b77e2fb1d86466caebdfffa286df087": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "data": {
+          "id": "-7396229968930044687",
+          "label": "all-all-aggregate-invert",
+          "shape": "ellipse",
+          "color": "gray"
+        },
+        "position": {}
+      }
+    },
+    "58182ec5991a4eae8d09dc37a7deae1c": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "data": {
+          "id": "976988216998548035",
+          "label": "()",
+          "shape": "rectangle",
+          "color": "gray"
+        },
+        "position": {}
+      }
+    },
+    "386d9aba021d4f89a9bb7b4709c8eeed": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "data": {
+          "id": "6793519371572144895",
+          "label": "invert",
+          "shape": "ellipse",
+          "color": "gray"
+        },
+        "position": {}
+      }
+    },
+    "ff54bb4426204361a9e0d4946b7897a8": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "data": {
+          "id": "-2400464418301456311",
+          "label": "getitem",
+          "shape": "ellipse",
+          "color": "gray"
+        },
+        "position": {}
+      }
+    },
+    "36a68a4f1bff40a0bf5f40daed306456": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "data": {
+          "id": "4506726817145060184",
+          "label": "(0, 0, 0)",
+          "shape": "rectangle",
+          "color": "gray"
+        },
+        "position": {}
+      }
+    },
+    "0482bd662a0a459b84058f4f98bbd318": {
+      "model_name": "NodeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "data": {
+          "id": "-6425526071716448624",
+          "label": "sum",
+          "shape": "ellipse",
+          "color": "gray"
+        },
+        "position": {}
+      }
+    },
+    "0bc82b38d8234aafb8f96b98813482b4": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "-5704136578837237004",
+          "target": "2944466879301784814"
+        }
+      }
+    },
+    "d49e366e3abe49b4b5143f3bf6d82cb3": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "-6345034741783916790",
+          "target": "-5704136578837237004"
+        }
+      }
+    },
+    "bafc5eef40c04c568bbe61b0a4d14adf": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "1412202685105659092",
+          "target": "-5704136578837237004"
+        }
+      }
+    },
+    "a83ef5e94786482aa6223756a11f2719": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "3909881029077535737",
+          "target": "3829868187789576621"
+        }
+      }
+    },
+    "9f27cce0e14841faa155a8e7338b9387": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "9058431389960596993",
+          "target": "3909881029077535737"
+        }
+      }
+    },
+    "dac1c5b02bfa4948b19d4391ad8fa36c": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "-3169915368112340790",
+          "target": "3909881029077535737"
+        }
+      }
+    },
+    "c54db4ff48c941edb030e74a2c1f35f3": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "691385829263976336",
+          "target": "-6345034741783916790"
+        }
+      }
+    },
+    "e123c15a0ce74387b997ad70209feb2b": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "3829868187789576621",
+          "target": "691385829263976336"
+        }
+      }
+    },
+    "82050364c8214c2196b3aeae55e249cb": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "-4011370473613905936",
+          "target": "-3169915368112340790"
+        }
+      }
+    },
+    "64581a88135442f49795ad7d443c3ff0": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "9058431389960596993",
+          "target": "-4011370473613905936"
+        }
+      }
+    },
+    "2df5d443d7e94bb181fcd35127f13997": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "6920431793828237675",
+          "target": "-4011370473613905936"
+        }
+      }
+    },
+    "3789961d660244d8842ca704a7c1ad6f": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "6000439778855195061",
+          "target": "-4011370473613905936"
+        }
+      }
+    },
+    "9ec4c59f7ded4af691dbb355f4f9cb0e": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "122211648408059670",
+          "target": "-7443907045954447704"
+        }
+      }
+    },
+    "1cd57e4b023f418fb80476fa9a7a8450": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "1412202685105659092",
+          "target": "122211648408059670"
+        }
+      }
+    },
+    "00af5ad811554844b4e61f2d547f3f02": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "-1908479610123890986",
+          "target": "122211648408059670"
+        }
+      }
+    },
+    "0a573504eeb94a5dad0d88e869ba98a9": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "-674784242429165144",
+          "target": "9058431389960596993"
+        }
+      }
+    },
+    "2c1ac43443664fc0b7531eeadc2ac73f": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "-7443907045954447704",
+          "target": "-674784242429165144"
+        }
+      }
+    },
+    "08d6a9fecff14a388bbd1694db0efd20": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "-2354299233626930436",
+          "target": "-1908479610123890986"
+        }
+      }
+    },
+    "ea7075a75e7b48a9b262d4dfca0b32f2": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "-983182586318052413",
+          "target": "-2354299233626930436"
+        }
+      }
+    },
+    "893731c14b7949d79b122e4e7137f67f": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "-7396229968930044687",
+          "target": "976988216998548035"
+        }
+      }
+    },
+    "5ca114ad2fc34da39ebf9facc21d24c1": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "-1908479610123890986",
+          "target": "-7396229968930044687"
+        }
+      }
+    },
+    "f068329ba1c74b569700bdef74bc531d": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "6793519371572144895",
+          "target": "1412202685105659092"
+        }
+      }
+    },
+    "5881eee4b87449db907a72688e622163": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "976988216998548035",
+          "target": "6793519371572144895"
+        }
+      }
+    },
+    "a2c6929b45904f7a8047979f00adc757": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "-2400464418301456311",
+          "target": "4506726817145060184"
+        }
+      }
+    },
+    "1376c1aa21da469d93986dc2af062663": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "-6425526071716448624",
+          "target": "-983182586318052413"
+        }
+      }
+    },
+    "4957865d234541d78fd8dec17d14e98e": {
+      "model_name": "EdgeModel",
+      "model_module": "jupyter-cytoscape",
+      "model_module_version": "^1.3.3",
+      "state": {
+        "classes": " directed ",
+        "data": {
+          "source": "4506726817145060184",
+          "target": "-6425526071716448624"
+        }
+      }
+    }
+  }
+}
+</script>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "03f4c2d5e55c447d822f5772dbcb2fd2"}
+</script>
+
+</body>
+</html>

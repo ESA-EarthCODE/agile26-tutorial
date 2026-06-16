@@ -36,8 +36,14 @@ project:
     - file: burnt-area-example/pangeo_on_EarthCODE.ipynb
     - file: data_access_examples/index.md
       children:
-        - file: data_access_examples/seasfire/1. pangeo_on_EarthCODE_parallel.ipynb
         - file: data_access_examples/antarctic-cubes/access_and_viz.ipynb
+        - file: data_access_examples/sen4amazonas/sen4amazonas.ipynb
+        - file: data_access_examples/smart-ch4/access.ipynb
+        - file: data_access_examples/waposal/access.ipynb
+        - file: data_access_examples/arceme/access_arceme.ipynb
+        - file: data_access_examples/agricem/access.ipynb
+        - file: data_access_examples/lightning2earthcare/data_access.ipynb
+        - file: data_access_examples/lightning2earthcare/data_visualization.ipynb
   subject: earth and related environmental sciences
   bibliography:
     - references.bib

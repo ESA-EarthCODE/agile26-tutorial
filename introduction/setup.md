@@ -1,8 +1,6 @@
 # Setup
 
-This workshop runs locally from a JupyterLab session using the existing `pangeo-notebook` conda environment.
-
-No package installation is part of the workshop. Please use the environment already prepared for the session.
+This workshop runs locally from a JupyterLab session using the `agile26-pangeo` conda environment available in the repository.
 
 ## Clone the Repository
 
@@ -12,6 +10,14 @@ cd agile26-tutorial
 ```
 
 ## Start JupyterLab
+
+If you do not already have that environment, create the pinned workshop environment from this repository:
+
+```bash
+conda env create -f environment.yml
+conda activate agile26-pangeo
+jupyter lab
+```
 
 ```bash
 conda activate pangeo-notebook

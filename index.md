@@ -14,6 +14,8 @@ tags: [FAIR, pangeo, earthCODE, STAC, open science]
 
 This AGILE 2026 workshop introduces EarthCODE through practical, hands-on reuse of open Earth Observation research data.
 
+![qr-code](qr-code.png)
+
 EarthCODE is a strategic initiative by the <b>European Space Agency (ESA)</b> designed to support FAIR and Open Science practice in Earth System Science.
 
 ![EarthCODE Logo](./static/PangeoXEarthCODE.png)
