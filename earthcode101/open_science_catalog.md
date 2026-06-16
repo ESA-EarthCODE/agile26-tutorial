@@ -53,5 +53,3 @@ During the walkthrough, use the catalog to locate examples such as:
 - SEASFIRE Cube, a global fire modelling dataset used in the Pangeo examples.
 - Antarctica analysis-ready data cubes, which demonstrate how FAIRified EO data can be packaged for direct reuse.
 - Other EarthCODE-hosted products that expose cloud-native access URLs.
-
-The goal is not to memorise the catalog structure. The goal is to develop the habit of checking metadata, understanding provenance, finding the access link, and moving from discovery to analysis in a notebook.

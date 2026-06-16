@@ -20,7 +20,7 @@ jupyter lab
 ```
 
 ```bash
-conda activate pangeo-notebook
+conda activate agile26-pangeo
 jupyter lab
 ```
 

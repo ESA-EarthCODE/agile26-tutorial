@@ -14,7 +14,7 @@ During the workshop, participants will:
 - Work through a guided analysis of burnt forest areas.
 - Explore additional data access examples, including SEASFIRE and Antarctica analysis-ready data cubes.
 
-**Pre-requirements for attendees**: Bring a laptop and use the existing `pangeo-notebook` conda environment. The workshop assumes basic familiarity with Python and Jupyter notebooks. No package installation is part of the session.
+**Pre-requirements for attendees**: Bring a laptop and use the existing `agile26-pangeo` conda environment. The workshop assumes basic familiarity with Python and Jupyter notebooks. No package installation is part of the session.
 
 :::{hint} Learning Objectives
 - Find relevant EarthCODE resources through the Open Science Catalog.

@@ -22,4 +22,4 @@ EarthCODE is a strategic initiative by the <b>European Space Agency (ESA)</b> de
 
 Participants will browse the EarthCODE Open Science Catalog, access datasets through STAC and Python tools, refresh core Pangeo concepts, and work through a guided case study analysing burnt forest areas.
 
-The workshop uses a local Jupyter environment with the existing `pangeo-notebook` conda environment.
+The workshop uses a local Jupyter environment with the existing `agile26-pangeo` conda environment.
